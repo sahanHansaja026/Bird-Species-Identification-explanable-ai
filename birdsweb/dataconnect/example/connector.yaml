@@ -1,0 +1,9 @@
+connectorId: example
+generate:
+  javascriptSdk:
+    - outputDir: ..\..\bird-admin\src\dataconnect-generated
+      package: "@dataconnect/generated"
+      packageJsonDir: ..\..\bird-admin
+      react: true
+      angular: false
+      clientCache: {}

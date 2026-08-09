@@ -1,0 +1,29 @@
+```gitignore
+# Environment variables
+.env
+.env.*
+
+# Firebase credentials
+serviceAccountKey.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+
+# Flutter
+.dart_tool/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# Secrets / certificates
+*.pem
+```

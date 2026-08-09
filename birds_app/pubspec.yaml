@@ -1,0 +1,59 @@
+name: birds_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.11.4
+
+dependencies:
+  audioplayers: ^6.6.0
+  cloud_firestore: ^6.3.0
+  file_picker: ^11.0.2
+  firebase_auth: ^6.4.0
+  firebase_core: ^4.7.0
+  fl_chart: ^1.2.0
+  flutter:
+    sdk: flutter
+  flutter_dotenv: ^6.0.1
+  flutter_launcher_icons: ^0.14.4
+  flutter_sound: ^9.30.0
+  font_awesome_flutter: ^11.0.0
+  google_fonts: ^8.0.2
+  google_sign_in: ^7.2.0
+  permission_handler: ^12.0.3
+  record: ^6.2.1
+  shared_preferences: ^2.5.5
+  smooth_page_indicator: ^2.0.1
+  tflite_flutter: ^0.12.1
+  url_launcher: 6.2.6
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/appicon.jpeg"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/splashimage.png
+    - assets/images/vector.png
+    - assets/images/signup.png
+    - assets/images/login.png
+    - assets/images/google.png
+    - assets/images/menu.png
+    - assets/images/appicon.jpeg
+    - assets/images/error.png
+    - assets/images/homebird.png
+    - assets/images/sahan.jpeg
+    - assets/model.tflite
+    - assets/feature_importance.json
+    - .env
+    
+

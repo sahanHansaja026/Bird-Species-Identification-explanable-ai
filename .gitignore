@@ -1,0 +1,32 @@
+<<<<<<< HEAD
+# Python / FastAPI
+__pycache__/
+*.pyc
+.env
+.venv
+venv/
+dist/
+build/
+
+# Node.js (IMPORTANT)
+node_modules/
+
+# If node_modules is inside subfolder (your case)
+**/node_modules/
+=======
+# Node
+node_modules/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Env files
+.env
+
+# Next.js
+.next/
+>>>>>>> 16dfd8c (Initial clean commit)
+serviceAccountKey.json
+*.json

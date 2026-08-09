@@ -1,0 +1,45 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+  bio: String
+  location: String
+}
+
+type BirdSpecies @table {
+  commonName: String!
+  scientificName: String!
+  createdAt: Timestamp!
+  description: String
+  habitat: String
+  conservationStatus: String
+  imageUrl: String
+}
+
+type Recording @table {
+  audioUrl: String!
+  createdAt: Timestamp!
+  isPublic: Boolean!
+  title: String
+  duration: Float
+  latitude: Float
+  longitude: Float
+  notes: String
+  user: User
+}
+
+type Classification @table {
+  confidenceScore: Float!
+  classifierVersion: String
+  recording: Recording
+  birdSpecies: BirdSpecies
+}
+
+type CommunityContribution @table {
+  approved: Boolean!
+  submittedAt: Timestamp!
+  reviewerNotes: String
+  recording: Recording
+  user: User
+}

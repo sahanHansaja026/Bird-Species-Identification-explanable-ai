@@ -1,0 +1,78 @@
+
+name: Deploy Bird Backend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          command_timeout: 30m
+
+          script: |
+            set -e
+
+            echo "🚀 Starting deployment"
+
+            cd ~/Bird-Species-Identification-explanable-ai
+
+            echo "📥 Getting latest code..."
+            git fetch origin
+            git reset --hard origin/main
+
+            echo "📁 Entering backend..."
+            cd bird-ai-backend
+
+            echo "🐳 Stopping old container..."
+            docker stop bird-backend || true
+            docker rm bird-backend || true
+
+            echo "💾 Disk space before cleanup:"
+            df -h /
+
+            echo "🧹 Cleaning unused Docker resources..."
+            docker system prune -af
+
+            echo "💾 Disk space after cleanup:"
+            df -h /
+
+            echo "🐳 Building Docker image..."
+            docker build -t bird-backend .
+
+            echo "🚀 Starting FastAPI..."
+
+            docker run -d \
+              --name bird-backend \
+              --restart unless-stopped \
+              -p 8000:8000 \
+              -e STRIPE_API_KEY="${{ secrets.STRIPE_API_KEY }}" \
+              -e STRIPE_WEBHOOK_SECRET="${{ secrets.STRIPE_WEBHOOK_SECRET }}" \
+              -e FIREBASE_SERVICE_ACCOUNT='${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' \
+              bird-backend
+
+            echo "⏳ Waiting for container to start..."
+            sleep 5
+
+            echo "🔍 Checking container..."
+            docker ps
+
+            echo "📋 Recent logs:"
+            docker logs --tail 50 bird-backend || true
+
+            echo "💾 Final disk space:"
+            df -h /
+
+            echo "✅ Deployment successful"
