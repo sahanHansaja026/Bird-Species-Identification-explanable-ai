@@ -12,7 +12,7 @@ import 'package:http_parser/http_parser.dart';
 // ─────────────────────────────────────────────
 //  CONFIG
 // ─────────────────────────────────────────────
-const String kBaseUrl = 'http://16.192.165.191:8000';
+const String kBaseUrl = 'http://15.207.113.210:8000';
 
 // ─────────────────────────────────────────────
 //  DESIGN TOKENS  –  Matching AudioRecordPage

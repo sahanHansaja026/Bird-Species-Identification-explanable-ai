@@ -52,6 +52,9 @@ flutter:
     - assets/images/error.png
     - assets/images/homebird.png
     - assets/images/sahan.jpeg
+    - assets/images/samadi.jpeg
+    - assets/images/deshani.jpeg
+    - assets/images/saduni.png
     - assets/model.tflite
     - assets/feature_importance.json
     - .env

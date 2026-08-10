@@ -166,7 +166,7 @@ class _About_Us_PageState extends State<About_Us_Page>
 
                     // 1. Jayasundara (Data Science)
                     _MemberItem(
-                      imagePath: 'assets/images/jayasundara.jpg',
+                      imagePath: 'assets/images/samadi.jpeg',
                       initials: "JJ",
                       name: "D.M.S.Y. Jayasundara",
                       role: "Data Science",
@@ -177,7 +177,7 @@ class _About_Us_PageState extends State<About_Us_Page>
 
                     // 2. Rajaguru (Data Science)
                     _MemberItem(
-                      imagePath: 'assets/images/rajaguru.jpg',
+                      imagePath: 'assets/images/saduni.png',
                       initials: "RR",
                       name: "I.W.S.C.R. Rajaguru",
                       role: "Data Science",
@@ -199,7 +199,7 @@ class _About_Us_PageState extends State<About_Us_Page>
 
                     // 4. Wijewardhana (Data Science)
                     _MemberItem(
-                      imagePath: 'assets/images/wijewardhana.jpg',
+                      imagePath: 'assets/images/deshani.jpeg',
                       initials: "MW",
                       name: "M.A.D.H. Wijewardhana",
                       role: "Data Science",

@@ -1,2 +1,4 @@
 docker build -t bird-api .
 docker run -p 8000:8000 bird-api
+
+https://api.edumate.sbs

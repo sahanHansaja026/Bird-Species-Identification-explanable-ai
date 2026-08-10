@@ -24,7 +24,7 @@ class AppColors {
   static const Color dangerBg = Color(0xFFFFEBEE);
 }
 
-const String kBaseUrl = 'http://16.192.165.191:8000';
+const String kBaseUrl = 'http://15.207.113.210:8000';
 
 class AudioRecordPage extends StatefulWidget {
   const AudioRecordPage({super.key});
